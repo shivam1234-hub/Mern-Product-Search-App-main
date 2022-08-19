@@ -1,0 +1,35 @@
+.icon_container {
+    position: fixed;
+    top: 0;
+    width: 150px;
+    /* width: 100px;
+      height: 30px; */
+    /* background-color: #7694FF; */
+    left: 50vw;
+    /* color: #fff; */
+    /* clip-path: polygon(50% 100%, 0 0, 100% 0); */
+    /* display: flex;
+      justify-content: center;
+      align-items: center; */
+    z-index: 100;
+    transform: translateX(-75px);
+  }
+  
+  .icon_container img {
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .search_input {
+    transform: translateY(-4rem);
+    opacity: 0;
+    transition: all 0.5s;
+  }
+  
+  .parent_search {
+    z-index: 100;
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
