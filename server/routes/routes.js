@@ -119,7 +119,7 @@ route.post('/search', async(req, res) => {
         }
     }).then(function(resp) {
             console.log("Successful query!");
-            return res.send(JSON.stringify(resp, null, 4));
+            return res.send(JSON.stringify(resp.hits.hits, null, 4));
         },
         function(err) {
             console.trace(err.message);

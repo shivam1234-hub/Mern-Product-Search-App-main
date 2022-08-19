@@ -1,6 +1,7 @@
 import React,{useState} from "react"
 import classes from "./Search.module.css";
 import SearchIcon from "@mui/icons-material/Search";
+import Product from "../products/Product";
 
 import axios from "axios";
 
@@ -9,6 +10,7 @@ const Search = ()=>{
 
     const [search, setSearch] = useState("");
     const [data,setData] = useState();
+    
 
     const onInput = e => setSearch(e.target.value);
 
@@ -22,9 +24,11 @@ const Search = ()=>{
         }
 
 
+
+
         axios.post("http://localhost:5000/search",body).then((res)=>{
 
-          setData(res);
+          setData(res.data);
 
           console.log(res);
         })
@@ -38,7 +42,7 @@ const Search = ()=>{
 
     return (
 
-
+ <>
     <div className={classes.body}>
       <div className={classes.wrapper}>
         <div className={classes.search}>
@@ -50,10 +54,16 @@ const Search = ()=>{
             value = {search}
             onChange={onInput}
           />
-          <SearchIcon style={{ color: "#7694FF" }} onClick = {apiCall} />
+          <SearchIcon product = {data} style={{ color: "#7694FF" }} onClick = {apiCall} />
         </div>
       </div>
     </div> 
+
+    <Product product = {data}/>
+
+    
+
+    </>
     )
 }
 

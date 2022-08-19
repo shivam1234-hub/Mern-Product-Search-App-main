@@ -1,19 +1,19 @@
 import React from "react";
 import "./ProductCard.css"
 
-const ProductCard = () =>{
+const ProductCard = ({product}) =>{
 
    
 
     return (
         <div class="container">
         <div class="card">
-          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c2hvZXMlMjBuaWtlfGVufDB8fDB8&ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=60" alt="" />
+          <img src={product.imageLink} alt="" />
           <div class="card-body">
             <div class="row">
               <div class="card-title">
-                <h4>Nike Sneaker</h4>
-                <h3>$120</h3>
+                <h4>{product.title}</h4>
+                <h3>{product.price}</h3>
               </div>
               <div class="view-btn">
                 <a href="">View Details</a>

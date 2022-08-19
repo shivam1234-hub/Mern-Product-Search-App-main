@@ -3,8 +3,10 @@ import searchSrc from "./search.svg";
 import classes from "./SearchIcon.module.css";
 import Search from "./Search";
 
+import Product from "../products/Product";
 
-const SearchIcon = ()=>{
+
+const SearchIcon = (props)=>{
     const [isSearchOpen,setIsSearchOpen] = useState(false);
     const searchInputRef = useRef();
     const searchParentRef = useRef();
@@ -31,6 +33,10 @@ const SearchIcon = ()=>{
       };
 
       return (
+
+        <>
+        
+       
         <div className={classes.parent_search} ref={searchParentRef}>
           <div className={classes.icon_container}>
             <img src={searchSrc} onClick={toggleSearchHandler} />
@@ -39,6 +45,12 @@ const SearchIcon = ()=>{
             {isSearchOpen && <Search />}
           </div>
         </div>
+
+        
+
+         </>
+
+        
       );
 
 
